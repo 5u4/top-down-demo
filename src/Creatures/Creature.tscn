@@ -1,3 +1,30 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Creatures/SpriteFrames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Cores/Core.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Behaviors/Behavior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Creatures/Creature.cs" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
 
 [node name="Creature" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -8 )
+frames = ExtResource( 1 )
+animation = "Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Core" parent="." instance=ExtResource( 2 )]
+
+[node name="Behavior" parent="." instance=ExtResource( 3 )]
+
+[node name="Plugin" type="Node2D" parent="."]

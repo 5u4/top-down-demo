@@ -57,6 +57,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\Behavior.cs" />
+    <Compile Include="Behaviors\PlayerControlledMovementBehavior\PlayerControlledMovement.cs" />
+    <Compile Include="Cores\MovementCore\Movement.cs" />
+    <Compile Include="Cores\Core.cs" />
+    <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
