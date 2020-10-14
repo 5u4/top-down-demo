@@ -3,6 +3,9 @@ using TopDownDemo.Creatures;
 
 namespace TopDownDemo.Behaviors.PlayerControlledMovement
 {
+    /**
+     * Requirement: Core.Movement
+     */
     public class PlayerControlledMovement : Node2D
     {
         public Creature Creature;

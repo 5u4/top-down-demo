@@ -2,6 +2,9 @@ using Godot;
 
 namespace TopDownDemo.Cores.Animation.AnimationDecisions
 {
+    /**
+     * Requirement: Core.Movement
+     */
     public class RunAnimationDecision : AnimationDecision
     {
         public Animation Animation;
