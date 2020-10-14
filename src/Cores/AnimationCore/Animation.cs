@@ -2,11 +2,13 @@ using System.Linq;
 using Godot;
 using Godot.Collections;
 using TopDownDemo.Cores.AnimationCore.AnimationDecisions;
+using TopDownDemo.Creatures;
 
 namespace TopDownDemo.Cores.AnimationCore
 {
     public class Animation : Node2D
     {
+        public Creature Creature;
         public AnimatedSprite AnimatedSprite;
         public AnimationPlayer AnimationPlayer;
 
@@ -14,8 +16,10 @@ namespace TopDownDemo.Cores.AnimationCore
 
         public override void _Ready()
         {
-            AnimatedSprite = GetNode<AnimatedSprite>("../../AnimatedSprite");
-            AnimationPlayer = GetNode<AnimationPlayer>("../../AnimationPlayer");
+            Creature = GetNode<Creature>("../..");
+
+            AnimatedSprite = Creature.GetNode<AnimatedSprite>("AnimatedSprite");
+            AnimationPlayer = Creature.GetNode<AnimationPlayer>("AnimationPlayer");
 
             AnimatedSprite.Play();
 

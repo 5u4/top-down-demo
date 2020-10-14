@@ -1,21 +1,21 @@
 using Godot;
-using System;
+using TopDownDemo.Creatures;
 
-public class RunAnimationDecision : Node2D
+namespace TopDownDemo.Cores.AnimationCore.AnimationDecisions
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public class RunAnimationDecision : AnimationDecision
     {
-        
-    }
+        public Animation Animation;
+        public const float MoveSpeedThreshold = 4f;
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+        public override void _Ready()
+        {
+            Animation = GetNode<Animation>("..");
+        }
+
+        public override string Decide()
+        {
+            return Animation.Creature.Core.Movement.Velocity.DistanceTo(Vector2.Zero) > MoveSpeedThreshold ? "Run" : null;
+        }
+    }
 }
