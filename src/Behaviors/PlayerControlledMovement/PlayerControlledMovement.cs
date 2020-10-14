@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Creatures;
 
-namespace TopDownDemo.Behaviors.PlayerControlledMovementBehavior
+namespace TopDownDemo.Behaviors.PlayerControlledMovement
 {
     public class PlayerControlledMovement : Node2D
     {

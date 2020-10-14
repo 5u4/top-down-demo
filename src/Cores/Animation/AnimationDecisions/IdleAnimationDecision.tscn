@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CSharpScript" id=1]
+script/source = "using System;
+
+namespace TopDownDemo.Cores.AnimationCore.AnimationDecisions
+{
+    public class IdleAnimationDecision : AnimationDecision
+    {
+        public override string Decide()
+        {
+            return \"Idle\";
+        }
+    }
+}
+"
+
+[node name="IdleAnimationDecision" type="Node2D"]
+script = SubResource( 1 )

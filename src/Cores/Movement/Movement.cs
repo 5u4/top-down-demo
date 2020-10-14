@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Creatures;
 
-namespace TopDownDemo.Cores.MovementCore
+namespace TopDownDemo.Cores.Movement
 {
     public class Movement : Node2D
     {

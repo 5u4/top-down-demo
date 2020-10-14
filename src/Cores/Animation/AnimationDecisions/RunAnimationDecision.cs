@@ -1,16 +1,15 @@
 using Godot;
-using TopDownDemo.Creatures;
 
-namespace TopDownDemo.Cores.AnimationCore.AnimationDecisions
+namespace TopDownDemo.Cores.Animation.AnimationDecisions
 {
     public class RunAnimationDecision : AnimationDecision
     {
-        public Animation Animation;
+        public Cores.Animation.Animation Animation;
         public const float MoveSpeedThreshold = 4f;
 
         public override void _Ready()
         {
-            Animation = GetNode<Animation>("..");
+            Animation = GetNode<Cores.Animation.Animation>("..");
         }
 
         public override string Decide()

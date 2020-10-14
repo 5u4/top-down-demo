@@ -1,6 +1,4 @@
-using System;
-
-namespace TopDownDemo.Cores.AnimationCore.AnimationDecisions
+namespace TopDownDemo.Cores.Animation.AnimationDecisions
 {
     public class IdleAnimationDecision : AnimationDecision
     {

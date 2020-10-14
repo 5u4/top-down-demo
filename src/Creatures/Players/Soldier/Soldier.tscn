@@ -4,12 +4,12 @@
 [ext_resource path="res://Creatures/Players/Soldier/Soldier.cs" type="Script" id=2]
 [ext_resource path="res://Creatures/Players/Soldier/SpriteFrames.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Creatures/Players/Soldier/Idle.tres" type="Animation" id=4]
-[ext_resource path="res://Cores/AnimationCore/Animation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Cores/MovementCore/Movement.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Cores/AnimationCore/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Behaviors/PlayerControlledMovementBehavior/PlayerControlledMovement.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Cores/Animation/Animation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cores/Movement/Movement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cores/Animation/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Behaviors/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Creatures/Players/Soldier/Run.tres" type="Animation" id=9]
-[ext_resource path="res://Cores/AnimationCore/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Cores/Animation/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
 
 [node name="Soldier" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
