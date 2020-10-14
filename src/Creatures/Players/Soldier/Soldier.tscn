@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Creatures/Players/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Weapons/Ranged/Pistol/Pistol.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Creatures/Players/Soldier/SpriteFrames.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Creatures/Players/Soldier/Idle.tres" type="Animation" id=4]
 [ext_resource path="res://Cores/Animation/Animation.tscn" type="PackedScene" id=5]
@@ -19,6 +20,8 @@ script = null
 [node name="AnimatedSprite" parent="Body" index="1"]
 frames = ExtResource( 3 )
 animation = "Idle"
+
+[node name="Pistol" parent="Body" index="3" instance=ExtResource( 2 )]
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/Idle = ExtResource( 4 )
