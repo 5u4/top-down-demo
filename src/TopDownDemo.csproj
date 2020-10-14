@@ -70,9 +70,12 @@
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
+    <Compile Include="Mechanics\Attacks\Attack.cs" />
     <Compile Include="Mechanics\CursorAim\CursorAim.cs" />
+    <Compile Include="Mechanics\Attacks\IndividualCoolDownAttack\IndividualCoolDownAttack.cs" />
     <Compile Include="Mechanics\Mechanic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weapons\Ranged\Pistol\PrimaryAttack.cs" />
     <Compile Include="Weapons\Ranged\Projectile.cs" />
     <Compile Include="Weapons\Ranged\Ranged.cs" />
     <Compile Include="Weapons\Weapon.cs" />
