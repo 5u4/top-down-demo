@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Creatures/Players/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Creatures/Players/Soldier/Soldier.cs" type="Script" id=2]
+[ext_resource path="res://Creatures/Players/Soldier/SpriteFrames.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Creatures/Players/Soldier/Idle.tres" type="Animation" id=4]
+[ext_resource path="res://Cores/AnimationCore/Animation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cores/MovementCore/Movement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cores/AnimationCore/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Behaviors/PlayerControlledMovementBehavior/PlayerControlledMovement.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Creatures/Players/Soldier/Run.tres" type="Animation" id=9]
+
+[node name="Soldier" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" parent="." index="1"]
+frames = ExtResource( 3 )
+animation = "Idle"
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/Idle = ExtResource( 4 )
+anims/Run = ExtResource( 9 )
+
+[node name="Movement" parent="Core" index="0" instance=ExtResource( 6 )]
+
+[node name="Animation" parent="Core" index="1" instance=ExtResource( 5 )]
+
+[node name="IdleAnimationDecision" parent="Core/Animation" index="0" instance=ExtResource( 7 )]
+
+[node name="PlayerControlledMovement" parent="Behavior" index="0" instance=ExtResource( 8 )]

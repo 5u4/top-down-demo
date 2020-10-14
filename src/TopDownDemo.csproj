@@ -59,10 +59,15 @@
   <ItemGroup>
     <Compile Include="Behaviors\Behavior.cs" />
     <Compile Include="Behaviors\PlayerControlledMovementBehavior\PlayerControlledMovement.cs" />
+    <Compile Include="Cores\AnimationCore\Animation.cs" />
+    <Compile Include="Cores\AnimationCore\AnimationDecisions\AnimationDecision.cs" />
+    <Compile Include="Cores\AnimationCore\AnimationDecisions\IdleAnimationDecision.cs" />
+    <Compile Include="Cores\AnimationCore\AnimationDecisions\RunAnimationDecision.cs" />
     <Compile Include="Cores\MovementCore\Movement.cs" />
     <Compile Include="Cores\Core.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
+    <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

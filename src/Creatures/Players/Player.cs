@@ -1,6 +1,6 @@
 namespace TopDownDemo.Creatures.Players
 {
-    public class Player : Creature
+    public abstract class Player : Creature
     {
     }
 }
