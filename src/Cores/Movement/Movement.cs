@@ -19,7 +19,7 @@ namespace TopDownDemo.Cores.Movement
 
         public override void _PhysicsProcess(float delta)
         {
-            Velocity = Creature.MoveAndSlide(Velocity);
+            Velocity = Creature.Body.MoveAndSlide(Velocity);
         }
 
         public void MoveTowards(Vector2 direction)

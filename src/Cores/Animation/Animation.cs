@@ -18,7 +18,7 @@ namespace TopDownDemo.Cores.Animation
         {
             Creature = GetNode<Creature>("../..");
 
-            AnimatedSprite = Creature.GetNode<AnimatedSprite>("AnimatedSprite");
+            AnimatedSprite = Creature.GetNode<AnimatedSprite>("Body/AnimatedSprite");
             AnimationPlayer = Creature.GetNode<AnimationPlayer>("AnimationPlayer");
 
             AnimatedSprite.Play();

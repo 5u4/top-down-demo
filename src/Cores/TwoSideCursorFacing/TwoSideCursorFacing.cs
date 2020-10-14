@@ -19,11 +19,9 @@ namespace TopDownDemo.Cores.TwoSideCursorFacing
 
         private void HandleFlip()
         {
-            var angle = Mathf.Rad2Deg((GetGlobalMousePosition() - Creature.GlobalPosition).Angle());
+            var angle = Mathf.Rad2Deg((GetGlobalMousePosition() - Creature.Body.GlobalPosition).Angle());
             var shouldFlip = angle <= -90 || angle >= 90;
-            var scale = Creature.Scale;
-            scale.x = shouldFlip ? -1 * Mathf.Abs(scale.x) : Mathf.Abs(scale.x); // TODO: Flip display handle
-            Creature.AnimatedSprite.Scale = scale;
+            Creature.AnimatedSprite.FlipH = shouldFlip;
             Creature.AnimatedSprite.Play(null, shouldFlip);
         }
     }

@@ -66,6 +66,7 @@
     <Compile Include="Cores\Movement\Movement.cs" />
     <Compile Include="Cores\Core.cs" />
     <Compile Include="Cores\TwoSideCursorFacing\TwoSideCursorFacing.cs" />
+    <Compile Include="Creatures\Body.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />

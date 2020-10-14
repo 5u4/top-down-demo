@@ -4,12 +4,12 @@ namespace TopDownDemo.Cores.Animation.AnimationDecisions
 {
     public class RunAnimationDecision : AnimationDecision
     {
-        public Cores.Animation.Animation Animation;
+        public Animation Animation;
         public const float MoveSpeedThreshold = 4f;
 
         public override void _Ready()
         {
-            Animation = GetNode<Cores.Animation.Animation>("..");
+            Animation = GetNode<Animation>("..");
         }
 
         public override string Decide()
