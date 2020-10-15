@@ -79,7 +79,9 @@
     <Compile Include="Weapons\Ranged\Projectiles\Modules\LinearTraveller\LinearTraveller.cs" />
     <Compile Include="Weapons\Ranged\Projectiles\PinkBullet\PinkBullet.cs" />
     <Compile Include="Weapons\Ranged\Projectiles\Projectile.cs" />
-    <Compile Include="Weapons\Ranged\Projectiles\Spawners\CursorAimSpawner.cs" />
+    <Compile Include="Weapons\Ranged\Projectiles\Spawners\Modifiers\CursorAim\CursorAim.cs" />
+    <Compile Include="Weapons\Ranged\Projectiles\Spawners\Modifiers\Modifier.cs" />
+    <Compile Include="Weapons\Ranged\Projectiles\Spawners\Spawner.cs" />
     <Compile Include="Weapons\Ranged\Ranged.cs" />
     <Compile Include="Weapons\Weapon.cs" />
   </ItemGroup>
