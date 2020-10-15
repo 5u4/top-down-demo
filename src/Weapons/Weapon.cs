@@ -4,12 +4,14 @@ namespace TopDownDemo.Weapons
 {
     public class Weapon : Node2D
     {
-        public Node2D Display;
+        public Node2D GlobalHandle;
+        public Node2D LocalHandle;
         public AnimationPlayer AnimationPlayer;
 
         public override void _Ready()
         {
-            Display = GetNode<Node2D>("Display");
+            GlobalHandle = GetNode<Node2D>("GlobalHandle");
+            LocalHandle = GlobalHandle.GetNode<Node2D>("LocalHandle");
             AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         }
     }

@@ -20,12 +20,12 @@ namespace TopDownDemo.Mechanics.CursorAim
         private void HandleRotation()
         {
             var mouse = GetGlobalMousePosition();
-            Weapon.Display.LookAt(mouse);
-            var angle = Mathf.Rad2Deg((mouse - Weapon.Display.GlobalPosition).Angle());
+            Weapon.GlobalHandle.LookAt(mouse);
+            var angle = Mathf.Rad2Deg((mouse - Weapon.GlobalHandle.GlobalPosition).Angle());
             var shouldFlip = angle <= -90 || angle >= 90;
-            var scale = Weapon.Display.Scale;
+            var scale = Weapon.GlobalHandle.Scale;
             scale.y = Mathf.Abs(scale.y) * (shouldFlip ? -1 : 1);
-            Weapon.Display.Scale = scale;
+            Weapon.GlobalHandle.Scale = scale;
         }
     }
 }

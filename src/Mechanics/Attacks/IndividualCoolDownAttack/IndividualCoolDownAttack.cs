@@ -31,8 +31,8 @@ namespace TopDownDemo.Mechanics.Attacks.IndividualCoolDownAttack
         private void HandleAttack()
         {
             if (!Input.IsActionPressed(Trigger) || CountDown > 0) return;
-            Attack.Execute();
             CountDown = CoolDown;
+            Attack.Execute();
         }
     }
 }

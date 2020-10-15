@@ -6,4 +6,4 @@
 [node name="Ranged" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Muzzle" type="Position2D" parent="Display" index="1"]
+[node name="Muzzle" type="Position2D" parent="GlobalHandle/LocalHandle" index="1"]
