@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[sub_resource type="Curve" id=2]
+[sub_resource type="Curve" id=1]
 max_value = 2.0
 _data = [ Vector2( 0, 2 ), 0.0, 3.96973, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=3]
-curve = SubResource( 2 )
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -17,10 +17,12 @@ initial_velocity = 10.0
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 3 )
+angle = 360.0
+angle_random = 1.0
+scale_curve = SubResource( 2 )
 
 [node name="ParticleTrailing" type="Particles2D"]
 amount = 24
 lifetime = 0.3
 local_coords = false
-process_material = SubResource( 1 )
+process_material = SubResource( 3 )
