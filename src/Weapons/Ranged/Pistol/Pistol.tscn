@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Weapons/Ranged/Ranged.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Ranged/Pistol/SpriteFrames.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Weapons/Ranged/Projectiles/Spawners/CursorAimSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mechanics/CursorAim/CursorAim.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mechanics/Attacks/IndividualCoolDownAttack/IndividualCoolDownAttack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Weapons/Ranged/Pistol/WeaponPrimary.tres" type="Animation" id=6]
 [ext_resource path="res://Weapons/Ranged/Pistol/PrimaryAttack.cs" type="Script" id=7]
+[ext_resource path="res://Weapons/Ranged/Projectiles/PinkBullet/PinkBullet.tscn" type="PackedScene" id=8]
 
 [node name="Pistol" instance=ExtResource( 1 )]
 
@@ -29,3 +31,8 @@ Trigger = "weapon_primary"
 
 [node name="PrimaryAttack" type="Node2D" parent="Mechanic/IndividualCoolDownAttack" index="0"]
 script = ExtResource( 7 )
+
+[node name="CursorAimSpawner" parent="Mechanic" index="2" instance=ExtResource( 3 )]
+ProjectileScene = ExtResource( 8 )
+SpawnPositionPath = NodePath("../../GlobalHandle/LocalHandle/Muzzle")
+CenterPositionPath = NodePath("../..")
