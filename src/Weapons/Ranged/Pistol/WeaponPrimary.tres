@@ -29,7 +29,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Attacks/CoolDownAttack/PrimaryAttack/Spawner")
+tracks/2/path = NodePath("Attacks/PrimaryAttack/Executor/Spawner")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false

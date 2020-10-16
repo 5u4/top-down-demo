@@ -5,17 +5,17 @@ namespace TopDownDemo.Attacks.CoolDownAttack
 {
     public class CoolDownAttack : Node2D
     {
-        [Export] public NodePath AttackPath;
+        [Export] public NodePath ExecutorPath;
         [Export] public NodePath ActionLockPath;
         [Export] public float CoolDown = 1;
         [Export] public string Trigger;
 
-        public Attack Attack;
+        public Executor Executor;
         public ActionLock ActionLock;
 
         public override void _Ready()
         {
-            Attack = GetNode<Attack>(AttackPath);
+            Executor = GetNode<Executor>(ExecutorPath);
             ActionLock = GetNode<ActionLock>(ActionLockPath);
         }
 
@@ -23,7 +23,7 @@ namespace TopDownDemo.Attacks.CoolDownAttack
         {
             if (!Input.IsActionPressed(Trigger) || ActionLock.IsLocked) return;
             ActionLock.Lock(CoolDown);
-            Attack.Execute();
+            Executor.Execute();
         }
     }
 }
