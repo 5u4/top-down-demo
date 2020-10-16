@@ -5,7 +5,7 @@ using TopDownDemo.Mechanics.Reload;
 
 namespace TopDownDemo.Modules.AutoReload
 {
-    public class AutoReload : Node2D
+    public class AutoReload : Module
     {
         [Export] public string[] Triggers = {"weapon_primary", "weapon_secondary"};
         [Export] public NodePath ReloadPath;

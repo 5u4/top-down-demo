@@ -2,7 +2,7 @@ using Godot;
 
 namespace TopDownDemo.Modules.LookAtCursor
 {
-    public class LookAtCursor : Node2D
+    public class LookAtCursor : Module
     {
         [Export] public NodePath HandlePath;
 
