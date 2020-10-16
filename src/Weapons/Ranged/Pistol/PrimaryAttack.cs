@@ -5,7 +5,7 @@ using TopDownDemo.Mechanics.Attacks;
 namespace TopDownDemo.Weapons.Ranged.Pistol
 {
     /**
-     * Requirement: Mechanic.Magazine
+     * Requirement: Mechanic.Magazine, Mechanic.ActionLock
      */
     public class PrimaryAttack : Attack
     {
@@ -18,7 +18,7 @@ namespace TopDownDemo.Weapons.Ranged.Pistol
 
         public override void Execute()
         {
-            if (Mechanic.Magazine.Amount <= 0) return; // TODO: Handle empty magazine
+            if (Mechanic.Magazine.Amount <= 0 || Mechanic.Reload.ActionLock.IsLocked) return; // TODO: Handle empty magazine sfx
             Mechanic.Magazine.Reduce();
             Mechanic.Weapon.AnimationPlayer.Play("WeaponPrimary");
         }

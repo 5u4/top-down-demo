@@ -63,6 +63,7 @@
     <Compile Include="Cores\Animation\AnimationDecisions\AnimationDecision.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\IdleAnimationDecision.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\RunAnimationDecision.cs" />
+    <Compile Include="Cores\ActionLock\ActionLock.cs" />
     <Compile Include="Cores\Movement\Movement.cs" />
     <Compile Include="Cores\Core.cs" />
     <Compile Include="Cores\TwoSideCursorFacing\TwoSideCursorFacing.cs" />

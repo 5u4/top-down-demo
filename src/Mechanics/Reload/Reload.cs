@@ -1,9 +1,10 @@
 using Godot;
+using TopDownDemo.Cores.ActionLock;
 
 namespace TopDownDemo.Mechanics.Reload
 {
     /**
-     * Requirement: Mechanic.Magazine
+     * Requirement: Mechanic.Magazine, Mechanic.ActionLock
      */
     public class Reload : Node2D
     {
@@ -12,10 +13,12 @@ namespace TopDownDemo.Mechanics.Reload
 
         public Mechanic Mechanic;
         public AnimationPlayer AnimationPlayer;
+        public ActionLock ActionLock;
 
         public override void _Ready()
         {
             Mechanic = GetParent<Mechanic>();
+            ActionLock = GetNode<ActionLock>("ActionLock");
 
             AnimationPlayer = Mechanic.WeaponGetter.AnimationPlayerGetter;
             AnimationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
@@ -32,10 +35,17 @@ namespace TopDownDemo.Mechanics.Reload
             return AnimationPlayer.CurrentAnimation == ReloadAnimation;
         }
 
-        public void StartReloading()
+        public async void StartReloading()
         {
-            var anim = Mechanic.Magazine.Amount < Mechanic.Magazine.Volume ? ReloadAnimation : FallbackAnimation;
-            Mechanic.Weapon.AnimationPlayer.Play(anim);
+            if (Mechanic.Magazine.Amount >= Mechanic.Magazine.Volume)
+            {
+                Mechanic.Weapon.AnimationPlayer.Play(FallbackAnimation);
+                ActionLock.Unlock();
+                return;
+            }
+            ActionLock.Lock();
+            Mechanic.Weapon.AnimationPlayer.Play(ReloadAnimation);
+            await ToSignal(Mechanic.Weapon.AnimationPlayer, "animation_finished");
         }
 
         public void LoadOne()
