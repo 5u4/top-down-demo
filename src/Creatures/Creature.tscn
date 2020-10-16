@@ -1,8 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Creatures/Body.cs" type="Script" id=1]
-[ext_resource path="res://Cores/Core.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Behaviors/Behavior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Creatures/Creature.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,21 +9,19 @@ extents = Vector2( 4, 4 )
 [node name="Creature" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Body" type="KinematicBody2D" parent="."]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 0, -8 )
 
-[node name="Plugin" type="Node2D" parent="Body"]
+[node name="Plugin" type="Node2D" parent="KinematicBody2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Core" parent="." instance=ExtResource( 2 )]
-
-[node name="Behavior" parent="." instance=ExtResource( 3 )]
+[node name="Modules" type="Node2D" parent="."]
