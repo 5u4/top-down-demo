@@ -2,6 +2,5 @@
 
 [ext_resource path="res://Weapons/Projectiles/Modifiers/LinearTraveller/LinearTraveller.cs" type="Script" id=1]
 
-
 [node name="LinearTraveller" type="Node2D"]
 script = ExtResource( 1 )

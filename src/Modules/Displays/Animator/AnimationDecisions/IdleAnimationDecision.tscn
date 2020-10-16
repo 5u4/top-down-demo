@@ -1,19 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="CSharpScript" id=1]
-script/source = "using System;
-
-namespace TopDownDemo.Cores.AnimationCore.AnimationDecisions
-{
-    public class IdleAnimationDecision : AnimationDecision
-    {
-        public override string Decide()
-        {
-            return \"Idle\";
-        }
-    }
-}
-"
+[ext_resource path="res://Modules/Displays/Animator/AnimationDecisions/IdleAnimationDecision.cs" type="Script" id=1]
 
 [node name="IdleAnimationDecision" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 1 )
