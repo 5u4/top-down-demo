@@ -60,7 +60,7 @@
     <Compile Include="Modules\Displays\Flippers\Flipper.cs" />
     <Compile Include="Modules\Displays\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
     <Compile Include="Modules\Displays\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
-    <Compile Include="Modules\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
+    <Compile Include="Modules\Mechanics\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Modules\Displays\Animator\Animator.cs" />
     <Compile Include="Modules\Displays\Animator\AnimationDecisions\AnimationDecision.cs" />
     <Compile Include="Modules\Displays\Animator\AnimationDecisions\IdleAnimationDecision.cs" />
