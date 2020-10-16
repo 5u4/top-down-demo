@@ -57,10 +57,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\Flippers\Flipper.cs" />
-    <Compile Include="Modules\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
-    <Compile Include="Modules\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
-    <Compile Include="Modules\PlayerControlledMovement\PlayerControlledMovement.cs" />
+    <Compile Include="Modules\Displays\Flippers\Flipper.cs" />
+    <Compile Include="Modules\Displays\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
+    <Compile Include="Modules\Displays\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
+    <Compile Include="Modules\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Cores\Animation\Animation.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\AnimationDecision.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\IdleAnimationDecision.cs" />
@@ -73,11 +73,11 @@
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
     <Compile Include="Attacks\Executor.cs" />
-    <Compile Include="Modules\AutoReload\AutoReload.cs" />
-    <Compile Include="Modules\LookAtCursor\LookAtCursor.cs" />
+    <Compile Include="Modules\Mechanics\AutoReload\AutoReload.cs" />
+    <Compile Include="Modules\Displays\LookAtCursor\LookAtCursor.cs" />
     <Compile Include="Attacks\CoolDownAttack\CoolDownAttack.cs" />
-    <Compile Include="Modules\Magazine\Magazine.cs" />
-    <Compile Include="Modules\Reload\Reload.cs" />
+    <Compile Include="Modules\Mechanics\Magazine\Magazine.cs" />
+    <Compile Include="Modules\Mechanics\Reload\Reload.cs" />
     <Compile Include="Modules\Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weapons\Ranged\Pistol\PrimaryAttackExecutor.cs" />

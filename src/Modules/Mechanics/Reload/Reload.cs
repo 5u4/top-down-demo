@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Cores.ActionLock;
 
-namespace TopDownDemo.Modules.Reload
+namespace TopDownDemo.Modules.Mechanics.Reload
 {
     public class Reload : Module
     {

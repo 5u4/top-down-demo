@@ -3,19 +3,24 @@
 [ext_resource path="res://Weapons/Ranged/Ranged.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Ranged/Pistol/SpriteFrames.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Cores/Spawner/Spawner.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Modules/LookAtCursor/LookAtCursor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Modules/Displays/LookAtCursor/LookAtCursor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/CoolDownAttack/CoolDownAttack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Weapons/Ranged/Pistol/WeaponPrimary.tres" type="Animation" id=6]
 [ext_resource path="res://Weapons/Ranged/Pistol/PrimaryAttackExecutor.cs" type="Script" id=7]
 [ext_resource path="res://Weapons/Projectiles/PinkBullet/PinkBullet.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Cores/Spawner/Modifiers/CursorDirection/CursorDirection.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Cores/Spawner/Modifiers/Spread/Spread.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Modules/Magazine/Magazine.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Modules/Mechanics/Magazine/Magazine.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Weapons/Ranged/Pistol/Reload.tres" type="Animation" id=12]
-[ext_resource path="res://Modules/Reload/Reload.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Modules/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Modules/Mechanics/Reload/Reload.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Modules/Mechanics/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Cores/ActionLock/ActionLock.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Modules/Flippers/TwoSideCursorScaleFlipper/TwoSideCursorScaleFlipper.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Modules/Displays/Flippers/TwoSideCursorScaleFlipper/TwoSideCursorScaleFlipper.tscn" type="PackedScene" id=16]
+
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Reset"

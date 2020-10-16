@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Modules.Magazine
+namespace TopDownDemo.Modules.Mechanics.Magazine
 {
     public class Magazine : Module
     {

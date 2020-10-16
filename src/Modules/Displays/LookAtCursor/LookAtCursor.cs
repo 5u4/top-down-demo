@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Modules.LookAtCursor
+namespace TopDownDemo.Modules.Displays.LookAtCursor
 {
     public class LookAtCursor : Module
     {

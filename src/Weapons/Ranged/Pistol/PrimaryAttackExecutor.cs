@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Attacks;
-using TopDownDemo.Modules.Magazine;
-using TopDownDemo.Modules.Reload;
+using TopDownDemo.Modules.Mechanics.Magazine;
+using TopDownDemo.Modules.Mechanics.Reload;
 
 namespace TopDownDemo.Weapons.Ranged.Pistol
 {

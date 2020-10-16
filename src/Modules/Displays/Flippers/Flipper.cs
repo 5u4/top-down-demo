@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Modules.Flippers
+namespace TopDownDemo.Modules.Displays.Flippers
 {
     public abstract class Flipper : Module
     {

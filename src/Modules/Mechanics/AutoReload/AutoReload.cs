@@ -1,7 +1,7 @@
 using System.Linq;
 using Godot;
 
-namespace TopDownDemo.Modules.AutoReload
+namespace TopDownDemo.Modules.Mechanics.AutoReload
 {
     public class AutoReload : Module
     {

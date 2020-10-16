@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Modules.Flippers.TwoSideCursorScaleFlipper
+namespace TopDownDemo.Modules.Displays.Flippers.TwoSideCursorScaleFlipper
 {
     public class TwoSideCursorScaleFlipper : Flipper
     {

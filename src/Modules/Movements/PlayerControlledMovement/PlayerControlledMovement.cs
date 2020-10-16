@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Cores.Movement;
 
-namespace TopDownDemo.Modules.PlayerControlledMovement
+namespace TopDownDemo.Modules.Movements.PlayerControlledMovement
 {
     public class PlayerControlledMovement : Module
     {
