@@ -1,25 +1,25 @@
 using Godot;
-using TopDownDemo.Creatures;
 
-namespace TopDownDemo.Cores.Movement
+namespace TopDownDemo.Modules.Mechanics.Movements.Movement
 {
     public class Movement : Node2D
     {
-        public Vector2 Velocity;
-        public Creature Creature;
-
+        [Export] public NodePath BodyPath;
         [Export] public float MoveSpeed = 50f;
         [Export] public float Acceleration = 0.5f;
         [Export] public float Friction = 0.25f;
 
+        public Vector2 Velocity;
+        public KinematicBody2D Body;
+
         public override void _Ready()
         {
-            Creature = GetNode<Creature>("../..");
+            Body = GetNode<KinematicBody2D>(BodyPath);
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            Velocity = Creature.Body.MoveAndSlide(Velocity);
+            Velocity = Body.MoveAndSlide(Velocity);
         }
 
         public void MoveTowards(Vector2 direction)

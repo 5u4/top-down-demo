@@ -1,5 +1,5 @@
 using Godot;
-using TopDownDemo.Cores.Movement;
+using TopDownDemo.Modules.Mechanics.Movements.Movement;
 
 namespace TopDownDemo.Modules.Displays.Animator.AnimationDecisions
 {

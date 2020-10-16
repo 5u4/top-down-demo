@@ -1,5 +1,4 @@
 using Godot;
-using TopDownDemo.Cores.Movement;
 
 namespace TopDownDemo.Modules.Mechanics.Movements.PlayerControlledMovement
 {
@@ -7,12 +6,12 @@ namespace TopDownDemo.Modules.Mechanics.Movements.PlayerControlledMovement
     {
         [Export] public NodePath MovementPath;
 
-        public Movement Movement;
+        public Movement.Movement Movement;
         public Vector2 Direction;
 
         public override void _Ready()
         {
-            Movement = GetNode<Movement>(MovementPath);
+            Movement = GetNode<Movement.Movement>(MovementPath);
         }
 
         public override void _PhysicsProcess(float delta)
