@@ -12,7 +12,7 @@
 [ext_resource path="res://Weapons/Ranged/Projectiles/Spawners/Modifiers/Spread/Spread.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mechanics/Magazine/Magazine.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Weapons/Ranged/Pistol/Reload.tres" type="Animation" id=12]
-[ext_resource path="res://Mechanics/Reload/Reload.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Modules/Reload/Reload.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Modules/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
@@ -111,14 +111,15 @@ anims/WeaponPrimary = ExtResource( 6 )
 [node name="Magazine" parent="Mechanic" index="0" instance=ExtResource( 11 )]
 Volume = 8
 
-[node name="Reload" parent="Mechanic" index="1" instance=ExtResource( 13 )]
-
-[node name="IndividualCoolDownAttack" parent="Mechanic" index="2" instance=ExtResource( 5 )]
+[node name="IndividualCoolDownAttack" parent="Mechanic" index="1" instance=ExtResource( 5 )]
 CoolDown = 0.4
 Trigger = "weapon_primary"
 
 [node name="PrimaryAttack" type="Node2D" parent="Mechanic/IndividualCoolDownAttack" index="0"]
 script = ExtResource( 7 )
+ReloadPath = NodePath("../../../Modules/Reload")
+MagazinePath = NodePath("../../Magazine")
+AnimationPlayerPath = NodePath("../../../AnimationPlayer")
 
 [node name="Spawner" parent="Mechanic/IndividualCoolDownAttack/PrimaryAttack" index="0" instance=ExtResource( 3 )]
 ProjectileScene = ExtResource( 8 )
@@ -134,7 +135,11 @@ Upper = 5.0
 [node name="LookAtCursor" parent="Modules" index="0" instance=ExtResource( 4 )]
 HandlePath = NodePath("../../GlobalHandle")
 
-[node name="AutoReload" parent="Modules" index="1" instance=ExtResource( 14 )]
-ReloadPath = NodePath("../../Mechanic/Reload")
+[node name="Reload" parent="Modules" index="1" instance=ExtResource( 13 )]
+MagazinePath = NodePath("../../Mechanic/Magazine")
+AnimationPlayerPath = NodePath("../../AnimationPlayer")
+
+[node name="AutoReload" parent="Modules" index="2" instance=ExtResource( 14 )]
+ReloadPath = NodePath("../Reload")
 MagazinePath = NodePath("../../Mechanic/Magazine")
 AnimationPlayerPath = NodePath("../../AnimationPlayer")

@@ -1,4 +1,5 @@
 using Godot;
+using TopDownDemo.Modules.Reload;
 using TopDownDemo.Weapons;
 
 namespace TopDownDemo.Mechanics
@@ -7,11 +8,11 @@ namespace TopDownDemo.Mechanics
     {
         public Weapon WeaponGetter => GetParent<Weapon>();
         public Magazine.Magazine MagazineGetter => GetNodeOrNull<Magazine.Magazine>("Magazine");
-        public Reload.Reload ReloadGetter => GetNodeOrNull<Reload.Reload>("Reload");
+        public Reload ReloadGetter => GetNodeOrNull<Reload>("Reload");
 
         public Weapon Weapon;
         public Magazine.Magazine Magazine;
-        public Reload.Reload Reload;
+        public Reload Reload;
 
         public override void _Ready()
         {

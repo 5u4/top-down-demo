@@ -1,26 +1,26 @@
 using Godot;
 using TopDownDemo.Cores.ActionLock;
+using TopDownDemo.Mechanics.Magazine;
 
-namespace TopDownDemo.Mechanics.Reload
+namespace TopDownDemo.Modules.Reload
 {
-    /**
-     * Requirement: Mechanic.Magazine, Mechanic.ActionLock
-     */
     public class Reload : Node2D
     {
         [Export] public string ReloadAnimation = "Reload";
         [Export] public string FallbackAnimation = "Reset";
+        [Export] public NodePath MagazinePath;
+        [Export] public NodePath AnimationPlayerPath;
 
-        public Mechanic Mechanic;
+        public Magazine Magazine;
         public AnimationPlayer AnimationPlayer;
         public ActionLock ActionLock;
 
         public override void _Ready()
         {
-            Mechanic = GetParent<Mechanic>();
+            Magazine = GetNode<Magazine>(MagazinePath);
+            AnimationPlayer = GetNode<AnimationPlayer>(AnimationPlayerPath);
             ActionLock = GetNode<ActionLock>("ActionLock");
 
-            AnimationPlayer = Mechanic.WeaponGetter.AnimationPlayerGetter;
             AnimationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
         }
 
@@ -37,20 +37,20 @@ namespace TopDownDemo.Mechanics.Reload
 
         public async void StartReloading()
         {
-            if (Mechanic.Magazine.Amount >= Mechanic.Magazine.Volume)
+            if (Magazine.Amount >= Magazine.Volume)
             {
-                Mechanic.Weapon.AnimationPlayer.Play(FallbackAnimation);
+                AnimationPlayer.Play(FallbackAnimation);
                 ActionLock.Unlock();
                 return;
             }
             ActionLock.Lock();
-            Mechanic.Weapon.AnimationPlayer.Play(ReloadAnimation);
-            await ToSignal(Mechanic.Weapon.AnimationPlayer, "animation_finished");
+            AnimationPlayer.Play(ReloadAnimation);
+            await ToSignal(AnimationPlayer, "animation_finished");
         }
 
         public void LoadOne()
         {
-            Mechanic.Magazine.Gain();
+            Magazine.Gain();
         }
 
         private void OnAnimationFinished(string anim)
