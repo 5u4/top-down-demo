@@ -5,7 +5,7 @@ using TopDownDemo.Modules.Displays.Animator.AnimationDecisions;
 
 namespace TopDownDemo.Modules.Displays.Animator
 {
-    public class Animator : Node2D
+    public class Animator : Module
     {
         [Export] public NodePath AnimatedSpritePath;
         [Export] public NodePath AnimationPlayerPath;

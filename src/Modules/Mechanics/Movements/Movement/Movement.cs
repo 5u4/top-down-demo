@@ -2,7 +2,7 @@ using Godot;
 
 namespace TopDownDemo.Modules.Mechanics.Movements.Movement
 {
-    public class Movement : Node2D
+    public class Movement : Module
     {
         [Export] public NodePath BodyPath;
         [Export] public float MoveSpeed = 50f;

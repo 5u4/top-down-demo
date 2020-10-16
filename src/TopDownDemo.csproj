@@ -67,7 +67,6 @@
     <Compile Include="Modules\Displays\Animator\AnimationDecisions\RunAnimationDecision.cs" />
     <Compile Include="Cores\ActionLock\ActionLock.cs" />
     <Compile Include="Modules\Mechanics\Movements\Movement\Movement.cs" />
-    <Compile Include="Cores\Core.cs" />
     <Compile Include="Creatures\Body.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
