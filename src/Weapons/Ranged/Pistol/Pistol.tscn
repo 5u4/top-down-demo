@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Weapons/Ranged/Ranged.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Ranged/Pistol/SpriteFrames.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Weapons/Ranged/Projectiles/Spawners/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/LookAtCursor/LookAtCursor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Mechanics/Attacks/IndividualCoolDownAttack/IndividualCoolDownAttack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Attacks/CoolDownAttack/CoolDownAttack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Weapons/Ranged/Pistol/WeaponPrimary.tres" type="Animation" id=6]
 [ext_resource path="res://Weapons/Ranged/Pistol/PrimaryAttack.cs" type="Script" id=7]
 [ext_resource path="res://Weapons/Ranged/Projectiles/PinkBullet/PinkBullet.tscn" type="PackedScene" id=8]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Weapons/Ranged/Pistol/Reload.tres" type="Animation" id=12]
 [ext_resource path="res://Modules/Reload/Reload.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Modules/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Cores/ActionLock/ActionLock.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Reset"
@@ -108,27 +109,6 @@ anims/Reload = ExtResource( 12 )
 anims/Reset = SubResource( 1 )
 anims/WeaponPrimary = ExtResource( 6 )
 
-[node name="IndividualCoolDownAttack" parent="Mechanic" index="0" instance=ExtResource( 5 )]
-CoolDown = 0.4
-Trigger = "weapon_primary"
-
-[node name="PrimaryAttack" type="Node2D" parent="Mechanic/IndividualCoolDownAttack" index="0"]
-script = ExtResource( 7 )
-ReloadPath = NodePath("../../../Modules/Reload")
-MagazinePath = NodePath("../../../Modules/Magazine")
-AnimationPlayerPath = NodePath("../../../AnimationPlayer")
-
-[node name="Spawner" parent="Mechanic/IndividualCoolDownAttack/PrimaryAttack" index="0" instance=ExtResource( 3 )]
-ProjectileScene = ExtResource( 8 )
-SpawnPositionPath = NodePath("../../../../GlobalHandle/LocalHandle/Muzzle")
-
-[node name="CursorAim" parent="Mechanic/IndividualCoolDownAttack/PrimaryAttack/Spawner" index="0" instance=ExtResource( 9 )]
-CenterPositionPath = NodePath("../../../../..")
-
-[node name="Spread" parent="Mechanic/IndividualCoolDownAttack/PrimaryAttack/Spawner" index="1" instance=ExtResource( 10 )]
-Lower = -5.0
-Upper = 5.0
-
 [node name="LookAtCursor" parent="Modules" index="0" instance=ExtResource( 4 )]
 HandlePath = NodePath("../../GlobalHandle")
 
@@ -143,3 +123,28 @@ AnimationPlayerPath = NodePath("../../AnimationPlayer")
 ReloadPath = NodePath("../Reload")
 MagazinePath = NodePath("../Magazine")
 AnimationPlayerPath = NodePath("../../AnimationPlayer")
+
+[node name="CoolDownAttack" parent="Attacks" index="0" instance=ExtResource( 5 )]
+AttackPath = NodePath("PrimaryAttack")
+ActionLockPath = NodePath("ActionLock")
+CoolDown = 0.4
+Trigger = "weapon_primary"
+
+[node name="ActionLock" parent="Attacks/CoolDownAttack" index="0" instance=ExtResource( 15 )]
+
+[node name="PrimaryAttack" type="Node2D" parent="Attacks/CoolDownAttack" index="1"]
+script = ExtResource( 7 )
+ReloadPath = NodePath("../../../Modules/Reload")
+MagazinePath = NodePath("../../../Modules/Magazine")
+AnimationPlayerPath = NodePath("../../../AnimationPlayer")
+
+[node name="Spawner" parent="Attacks/CoolDownAttack/PrimaryAttack" index="0" instance=ExtResource( 3 )]
+ProjectileScene = ExtResource( 8 )
+SpawnPositionPath = NodePath("../../../../GlobalHandle/LocalHandle/Muzzle")
+
+[node name="CursorAim" parent="Attacks/CoolDownAttack/PrimaryAttack/Spawner" index="0" instance=ExtResource( 9 )]
+CenterPositionPath = NodePath("../../../../..")
+
+[node name="Spread" parent="Attacks/CoolDownAttack/PrimaryAttack/Spawner" index="1" instance=ExtResource( 10 )]
+Lower = -5.0
+Upper = 5.0

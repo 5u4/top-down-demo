@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Mechanics.Attacks
+namespace TopDownDemo.Attacks
 {
     public abstract class Attack : Node2D
     {

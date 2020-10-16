@@ -71,10 +71,10 @@
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
-    <Compile Include="Mechanics\Attacks\Attack.cs" />
+    <Compile Include="Attacks\Attack.cs" />
     <Compile Include="Modules\AutoReload\AutoReload.cs" />
     <Compile Include="Modules\LookAtCursor\LookAtCursor.cs" />
-    <Compile Include="Mechanics\Attacks\IndividualCoolDownAttack\IndividualCoolDownAttack.cs" />
+    <Compile Include="Attacks\CoolDownAttack\CoolDownAttack.cs" />
     <Compile Include="Modules\Magazine\Magazine.cs" />
     <Compile Include="Mechanics\Mechanic.cs" />
     <Compile Include="Modules\Reload\Reload.cs" />
