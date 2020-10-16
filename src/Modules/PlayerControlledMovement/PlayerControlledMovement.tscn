@@ -1,4 +1,7 @@
-using Godot;
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CSharpScript" id=1]
+script/source = "using Godot;
 using TopDownDemo.Creatures;
 
 namespace TopDownDemo.Behaviors.PlayerControlledMovement
@@ -13,7 +16,7 @@ namespace TopDownDemo.Behaviors.PlayerControlledMovement
 
         public override void _Ready()
         {
-            Creature = GetNode<Creature>("../..");
+            Creature = GetNode<Creature>(\"../..\");
         }
 
         public override void _PhysicsProcess(float delta)
@@ -24,11 +27,15 @@ namespace TopDownDemo.Behaviors.PlayerControlledMovement
         private void HandleMovement()
         {
             Direction = Vector2.Zero;
-            if (Input.IsActionPressed("move_left")) Direction += Vector2.Left;
-            if (Input.IsActionPressed("move_right")) Direction += Vector2.Right;
-            if (Input.IsActionPressed("move_up")) Direction += Vector2.Up;
-            if (Input.IsActionPressed("move_down")) Direction += Vector2.Down;
+            if (Input.IsActionPressed(\"move_left\")) Direction += Vector2.Left;
+            if (Input.IsActionPressed(\"move_right\")) Direction += Vector2.Right;
+            if (Input.IsActionPressed(\"move_up\")) Direction += Vector2.Up;
+            if (Input.IsActionPressed(\"move_down\")) Direction += Vector2.Down;
             Creature.Core.Movement.MoveTowards(Direction);
         }
     }
 }
+"
+
+[node name="PlayerControlledMovement" type="Node2D"]
+script = SubResource( 1 )

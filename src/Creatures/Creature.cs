@@ -1,5 +1,4 @@
 using Godot;
-using TopDownDemo.Behaviors;
 using TopDownDemo.Cores;
 
 namespace TopDownDemo.Creatures
@@ -12,7 +11,6 @@ namespace TopDownDemo.Creatures
         public AnimationPlayer AnimationPlayer;
 
         public Core Core;
-        public Behavior Behavior;
         public Node2D Plugin;
 
         public override void _Ready()
@@ -23,7 +21,6 @@ namespace TopDownDemo.Creatures
             AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
             Core = GetNode<Core>("Core");
-            Behavior = GetNode<Behavior>("Behavior");
             Plugin = Body.GetNode<Node2D>("Plugin");
         }
     }

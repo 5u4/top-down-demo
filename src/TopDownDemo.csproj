@@ -57,8 +57,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Behaviors\Behavior.cs" />
-    <Compile Include="Behaviors\PlayerControlledMovement\PlayerControlledMovement.cs" />
+    <Compile Include="Modules\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Cores\Animation\Animation.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\AnimationDecision.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\IdleAnimationDecision.cs" />

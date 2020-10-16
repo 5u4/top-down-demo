@@ -7,7 +7,7 @@
 [ext_resource path="res://Cores/Animation/Animation.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cores/Movement/Movement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Cores/Animation/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Behaviors/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Creatures/Players/Soldier/Run.tres" type="Animation" id=9]
 [ext_resource path="res://Cores/Animation/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Cores/TwoSideCursorFacing/TwoSideCursorFacing.tscn" type="PackedScene" id=11]
@@ -37,4 +37,5 @@ anims/Run = ExtResource( 9 )
 
 [node name="TwoSideCursorFacing" parent="Core" index="2" instance=ExtResource( 11 )]
 
-[node name="PlayerControlledMovement" parent="Behavior" index="0" instance=ExtResource( 8 )]
+[node name="PlayerControlledMovement" parent="Modules" index="0" instance=ExtResource( 8 )]
+MovementPath = NodePath("../../Core/Movement")
