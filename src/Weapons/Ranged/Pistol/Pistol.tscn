@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Weapons/Ranged/Ranged.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Ranged/Pistol/SpriteFrames.tres" type="SpriteFrames" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Modules/Reload/Reload.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Modules/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Cores/ActionLock/ActionLock.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Modules/Flippers/TwoSideCursorScaleFlipper/TwoSideCursorScaleFlipper.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Reset"
@@ -112,14 +113,18 @@ anims/WeaponPrimary = ExtResource( 6 )
 [node name="LookAtCursor" parent="Modules" index="0" instance=ExtResource( 4 )]
 HandlePath = NodePath("../../GlobalHandle")
 
-[node name="Magazine" parent="Modules" index="1" instance=ExtResource( 11 )]
+[node name="TwoSideCursorScaleFlipper" parent="Modules" index="1" instance=ExtResource( 16 )]
+ReferencePath = NodePath("../..")
+ScaleReferencePath = NodePath("../../GlobalHandle")
+
+[node name="Magazine" parent="Modules" index="2" instance=ExtResource( 11 )]
 Volume = 8
 
-[node name="Reload" parent="Modules" index="2" instance=ExtResource( 13 )]
+[node name="Reload" parent="Modules" index="3" instance=ExtResource( 13 )]
 MagazinePath = NodePath("../Magazine")
 AnimationPlayerPath = NodePath("../../AnimationPlayer")
 
-[node name="AutoReload" parent="Modules" index="3" instance=ExtResource( 14 )]
+[node name="AutoReload" parent="Modules" index="4" instance=ExtResource( 14 )]
 ReloadPath = NodePath("../Reload")
 MagazinePath = NodePath("../Magazine")
 AnimationPlayerPath = NodePath("../../AnimationPlayer")

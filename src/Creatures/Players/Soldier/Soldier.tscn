@@ -10,7 +10,7 @@
 [ext_resource path="res://Modules/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Creatures/Players/Soldier/Run.tres" type="Animation" id=9]
 [ext_resource path="res://Cores/Animation/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Cores/TwoSideCursorFacing/TwoSideCursorFacing.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Modules/Flippers/TwoSideCursorAnimatedSpriteFlipper/TwoSideCursorAnimatedSpriteFlipper.tscn" type="PackedScene" id=11]
 
 [node name="Soldier" instance=ExtResource( 1 )]
 
@@ -35,7 +35,9 @@ anims/Run = ExtResource( 9 )
 
 [node name="IdleAnimationDecision" parent="Core/Animation" index="1" instance=ExtResource( 7 )]
 
-[node name="TwoSideCursorFacing" parent="Core" index="2" instance=ExtResource( 11 )]
-
 [node name="PlayerControlledMovement" parent="Modules" index="0" instance=ExtResource( 8 )]
 MovementPath = NodePath("../../Core/Movement")
+
+[node name="TwoSideCursorAnimatedSpriteFlipper" parent="Modules" index="1" instance=ExtResource( 11 )]
+ReferencePath = NodePath("../../Body")
+AnimatedSpritePath = NodePath("../../Body/AnimatedSprite")

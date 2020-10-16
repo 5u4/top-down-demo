@@ -57,6 +57,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\Flippers\Flipper.cs" />
+    <Compile Include="Modules\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
+    <Compile Include="Modules\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
     <Compile Include="Modules\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Cores\Animation\Animation.cs" />
     <Compile Include="Cores\Animation\AnimationDecisions\AnimationDecision.cs" />
@@ -65,7 +68,6 @@
     <Compile Include="Cores\ActionLock\ActionLock.cs" />
     <Compile Include="Cores\Movement\Movement.cs" />
     <Compile Include="Cores\Core.cs" />
-    <Compile Include="Cores\TwoSideCursorFacing\TwoSideCursorFacing.cs" />
     <Compile Include="Creatures\Body.cs" />
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
