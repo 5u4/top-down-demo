@@ -1,7 +1,7 @@
-using System;
 using Godot;
+using TopDownDemo.Weapons.Ranged.Projectiles;
 
-namespace TopDownDemo.Weapons.Ranged.Projectiles.Spawners.Modifiers.Spread
+namespace TopDownDemo.Cores.Spawner.Modifiers.Spread
 {
     public class Spread : Modifier
     {

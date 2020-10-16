@@ -1,6 +1,7 @@
 using Godot;
+using TopDownDemo.Weapons.Ranged.Projectiles;
 
-namespace TopDownDemo.Weapons.Ranged.Projectiles.Spawners.Modifiers
+namespace TopDownDemo.Cores.Spawner.Modifiers
 {
     public abstract class Modifier : Node2D
     {

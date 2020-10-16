@@ -1,8 +1,9 @@
 using Godot;
+using TopDownDemo.Weapons.Ranged.Projectiles;
 
-namespace TopDownDemo.Weapons.Ranged.Projectiles.Spawners.Modifiers.CursorAim
+namespace TopDownDemo.Cores.Spawner.Modifiers.CursorDirection
 {
-    public class CursorAim : Modifier
+    public class CursorDirection : Modifier
     {
         [Export] public NodePath CenterPositionPath;
 
