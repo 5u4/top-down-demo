@@ -20,7 +20,7 @@ namespace TopDownDemo.Mechanics.Magazine
 
         public void Gain(int amount = 1)
         {
-            Amount = Mathf.Max(Volume, Amount + amount);
+            Amount = Mathf.Min(Volume, Amount + amount);
         }
     }
 }

@@ -21,12 +21,12 @@ tracks/1/path = NodePath("GlobalHandle/LocalHandle:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.02, 0.09, 0.19, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, -16.0, 7.0, 0.0 ]
+"values": [ 0.0 ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("Mechanic/IndividualCoolDownAttack/PrimaryAttack/Spawner")
@@ -41,4 +41,28 @@ tracks/2/keys = {
 "args": [  ],
 "method": "Spawn"
 } ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GlobalHandle/LocalHandle/AnimatedSprite:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GlobalHandle/LocalHandle/AnimatedSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11, 0 ) ]
 }
