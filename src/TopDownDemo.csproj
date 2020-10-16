@@ -73,11 +73,12 @@
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
     <Compile Include="Mechanics\Attacks\Attack.cs" />
     <Compile Include="Mechanics\AutoReload\AutoReload.cs" />
-    <Compile Include="Mechanics\CursorAim\CursorAim.cs" />
+    <Compile Include="Modules\LookAtCursor\LookAtCursor.cs" />
     <Compile Include="Mechanics\Attacks\IndividualCoolDownAttack\IndividualCoolDownAttack.cs" />
     <Compile Include="Mechanics\Magazine\Magazine.cs" />
     <Compile Include="Mechanics\Mechanic.cs" />
     <Compile Include="Mechanics\Reload\Reload.cs" />
+    <Compile Include="Modules\Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weapons\Ranged\Pistol\PrimaryAttack.cs" />
     <Compile Include="Weapons\Ranged\Projectiles\Modules\LinearTraveller\LinearTraveller.cs" />
