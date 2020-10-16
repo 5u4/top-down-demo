@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Weapons/Ranged/Ranged.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Ranged/Pistol/SpriteFrames.tres" type="SpriteFrames" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Mechanics/Magazine/Magazine.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Weapons/Ranged/Pistol/Reload.tres" type="Animation" id=12]
 [ext_resource path="res://Mechanics/Reload/Reload.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Mechanics/AutoReload/AutoReload.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Reset"
@@ -114,7 +115,9 @@ Volume = 8
 
 [node name="Reload" parent="Mechanic" index="2" instance=ExtResource( 13 )]
 
-[node name="IndividualCoolDownAttack" parent="Mechanic" index="3" instance=ExtResource( 5 )]
+[node name="AutoReload" parent="Mechanic" index="3" instance=ExtResource( 14 )]
+
+[node name="IndividualCoolDownAttack" parent="Mechanic" index="4" instance=ExtResource( 5 )]
 CoolDown = 0.4
 Trigger = "weapon_primary"
 

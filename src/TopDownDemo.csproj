@@ -71,6 +71,7 @@
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
     <Compile Include="Mechanics\Attacks\Attack.cs" />
+    <Compile Include="Mechanics\AutoReload\AutoReload.cs" />
     <Compile Include="Mechanics\CursorAim\CursorAim.cs" />
     <Compile Include="Mechanics\Attacks\IndividualCoolDownAttack\IndividualCoolDownAttack.cs" />
     <Compile Include="Mechanics\Magazine\Magazine.cs" />

@@ -11,19 +11,25 @@ namespace TopDownDemo.Mechanics.Reload
         [Export] public string FallbackAnimation = "Reset";
 
         public Mechanic Mechanic;
+        public AnimationPlayer AnimationPlayer;
 
         public override void _Ready()
         {
             Mechanic = GetParent<Mechanic>();
 
-            var animationPlayer = Mechanic.WeaponGetter.AnimationPlayerGetter;
-            animationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
+            AnimationPlayer = Mechanic.WeaponGetter.AnimationPlayerGetter;
+            AnimationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
         }
 
         public override void _PhysicsProcess(float delta)
         {
-            if (!Input.IsActionPressed("reload")) return;
+            if (!Input.IsActionPressed("reload") || IsReloading()) return;
             StartReloading();
+        }
+
+        public bool IsReloading()
+        {
+            return AnimationPlayer.CurrentAnimation == ReloadAnimation;
         }
 
         public void StartReloading()
