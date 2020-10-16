@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Weapons/Ranged/Projectiles/Projectile.cs" type="Script" id=1]
+[ext_resource path="res://Weapons/Projectiles/Projectile.cs" type="Script" id=1]
 
 [node name="Projectile" type="Area2D"]
 collision_layer = 4
@@ -13,4 +13,4 @@ script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Module" type="Node2D" parent="."]
+[node name="Modifiers" type="Node2D" parent="."]

@@ -1,6 +1,6 @@
 using Godot;
 using TopDownDemo.Cores.Spawner.Modifiers;
-using TopDownDemo.Weapons.Ranged.Projectiles;
+using TopDownDemo.Weapons.Projectiles;
 
 namespace TopDownDemo.Cores.Spawner
 {

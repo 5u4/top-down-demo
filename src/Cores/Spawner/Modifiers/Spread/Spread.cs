@@ -1,5 +1,5 @@
 using Godot;
-using TopDownDemo.Weapons.Ranged.Projectiles;
+using TopDownDemo.Weapons.Projectiles;
 
 namespace TopDownDemo.Cores.Spawner.Modifiers.Spread
 {

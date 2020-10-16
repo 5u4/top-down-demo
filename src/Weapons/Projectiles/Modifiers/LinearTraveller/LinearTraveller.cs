@@ -1,14 +1,16 @@
 using Godot;
 
-namespace TopDownDemo.Weapons.Ranged.Projectiles.Modules.LinearTraveller
+namespace TopDownDemo.Weapons.Projectiles.Modifiers.LinearTraveller
 {
     public class LinearTraveller : Node2D
     {
+        [Export] public NodePath ProjectilePath;
+
         public Projectile Projectile;
 
         public override void _Ready()
         {
-            Projectile = GetNode<Projectile>("../..");
+            Projectile = GetNode<Projectile>(ProjectilePath);
         }
 
         public override void _PhysicsProcess(float delta)

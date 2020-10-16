@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Weapons.Ranged.Projectiles
+namespace TopDownDemo.Weapons.Projectiles
 {
     public abstract class Projectile : Area2D
     {
