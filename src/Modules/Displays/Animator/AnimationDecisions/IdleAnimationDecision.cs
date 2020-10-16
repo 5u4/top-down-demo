@@ -1,4 +1,4 @@
-namespace TopDownDemo.Cores.Animation.AnimationDecisions
+namespace TopDownDemo.Modules.Displays.Animator.AnimationDecisions
 {
     public class IdleAnimationDecision : AnimationDecision
     {

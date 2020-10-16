@@ -1,17 +1,15 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="CSharpScript" id=1]
-script/source = "using System.Linq;
+using System.Linq;
 using Godot;
 using Godot.Collections;
-using TopDownDemo.Cores.AnimationCore.AnimationDecisions;
-using TopDownDemo.Creatures;
+using TopDownDemo.Modules.Displays.Animator.AnimationDecisions;
 
-namespace TopDownDemo.Cores.AnimationCore
+namespace TopDownDemo.Modules.Displays.Animator
 {
-    public class Animation : Node2D
+    public class Animator : Node2D
     {
-        public Creature Creature;
+        [Export] public NodePath AnimatedSpritePath;
+        [Export] public NodePath AnimationPlayerPath;
+
         public AnimatedSprite AnimatedSprite;
         public AnimationPlayer AnimationPlayer;
 
@@ -19,10 +17,8 @@ namespace TopDownDemo.Cores.AnimationCore
 
         public override void _Ready()
         {
-            Creature = GetNode<Creature>(\"../..\");
-
-            AnimatedSprite = Creature.GetNode<AnimatedSprite>(\"AnimatedSprite\");
-            AnimationPlayer = Creature.GetNode<AnimationPlayer>(\"AnimationPlayer\");
+            AnimatedSprite = GetNode<AnimatedSprite>(AnimatedSpritePath);
+            AnimationPlayer = GetNode<AnimationPlayer>(AnimationPlayerPath);
 
             AnimatedSprite.Play();
 
@@ -56,7 +52,3 @@ namespace TopDownDemo.Cores.AnimationCore
         }
     }
 }
-"
-
-[node name="Animation" type="Node2D"]
-script = SubResource( 1 )

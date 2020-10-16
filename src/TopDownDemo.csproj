@@ -61,10 +61,10 @@
     <Compile Include="Modules\Displays\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
     <Compile Include="Modules\Displays\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
     <Compile Include="Modules\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
-    <Compile Include="Cores\Animation\Animation.cs" />
-    <Compile Include="Cores\Animation\AnimationDecisions\AnimationDecision.cs" />
-    <Compile Include="Cores\Animation\AnimationDecisions\IdleAnimationDecision.cs" />
-    <Compile Include="Cores\Animation\AnimationDecisions\RunAnimationDecision.cs" />
+    <Compile Include="Modules\Displays\Animator\Animator.cs" />
+    <Compile Include="Modules\Displays\Animator\AnimationDecisions\AnimationDecision.cs" />
+    <Compile Include="Modules\Displays\Animator\AnimationDecisions\IdleAnimationDecision.cs" />
+    <Compile Include="Modules\Displays\Animator\AnimationDecisions\RunAnimationDecision.cs" />
     <Compile Include="Cores\ActionLock\ActionLock.cs" />
     <Compile Include="Cores\Movement\Movement.cs" />
     <Compile Include="Cores\Core.cs" />

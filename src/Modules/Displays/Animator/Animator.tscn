@@ -1,10 +1,13 @@
-using System.Linq;
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CSharpScript" id=1]
+script/source = "using System.Linq;
 using Godot;
 using Godot.Collections;
-using TopDownDemo.Cores.Animation.AnimationDecisions;
+using TopDownDemo.Cores.AnimationCore.AnimationDecisions;
 using TopDownDemo.Creatures;
 
-namespace TopDownDemo.Cores.Animation
+namespace TopDownDemo.Cores.AnimationCore
 {
     public class Animation : Node2D
     {
@@ -16,10 +19,10 @@ namespace TopDownDemo.Cores.Animation
 
         public override void _Ready()
         {
-            Creature = GetNode<Creature>("../..");
+            Creature = GetNode<Creature>(\"../..\");
 
-            AnimatedSprite = Creature.GetNode<AnimatedSprite>("Body/AnimatedSprite");
-            AnimationPlayer = Creature.GetNode<AnimationPlayer>("AnimationPlayer");
+            AnimatedSprite = Creature.GetNode<AnimatedSprite>(\"AnimatedSprite\");
+            AnimationPlayer = Creature.GetNode<AnimationPlayer>(\"AnimationPlayer\");
 
             AnimatedSprite.Play();
 
@@ -53,3 +56,7 @@ namespace TopDownDemo.Cores.Animation
         }
     }
 }
+"
+
+[node name="Animator" type="Node2D"]
+script = SubResource( 1 )

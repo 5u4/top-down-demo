@@ -4,12 +4,12 @@
 [ext_resource path="res://Weapons/Ranged/Pistol/Pistol.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Creatures/Players/Soldier/SpriteFrames.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Creatures/Players/Soldier/Idle.tres" type="Animation" id=4]
-[ext_resource path="res://Cores/Animation/Animation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Modules/Displays/Animator/Animator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cores/Movement/Movement.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Cores/Animation/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Modules/Displays/Animator/AnimationDecisions/IdleAnimationDecision.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Modules/Movements/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Creatures/Players/Soldier/Run.tres" type="Animation" id=9]
-[ext_resource path="res://Cores/Animation/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Modules/Displays/Animator/AnimationDecisions/RunAnimationDecision.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Modules/Displays/Flippers/TwoSideCursorAnimatedSpriteFlipper/TwoSideCursorAnimatedSpriteFlipper.tscn" type="PackedScene" id=11]
 
 [node name="Soldier" instance=ExtResource( 1 )]
@@ -29,15 +29,18 @@ anims/Run = ExtResource( 9 )
 
 [node name="Movement" parent="Core" index="0" instance=ExtResource( 6 )]
 
-[node name="Animation" parent="Core" index="1" instance=ExtResource( 5 )]
-
-[node name="RunAnimationDecision" parent="Core/Animation" index="0" instance=ExtResource( 10 )]
-
-[node name="IdleAnimationDecision" parent="Core/Animation" index="1" instance=ExtResource( 7 )]
-
 [node name="PlayerControlledMovement" parent="Modules" index="0" instance=ExtResource( 8 )]
 MovementPath = NodePath("../../Core/Movement")
 
 [node name="TwoSideCursorAnimatedSpriteFlipper" parent="Modules" index="1" instance=ExtResource( 11 )]
 ReferencePath = NodePath("../../Body")
 AnimatedSpritePath = NodePath("../../Body/AnimatedSprite")
+
+[node name="Animator" parent="Modules" index="2" instance=ExtResource( 5 )]
+AnimatedSpritePath = NodePath("../../Body/AnimatedSprite")
+AnimationPlayerPath = NodePath("../../AnimationPlayer")
+
+[node name="RunAnimationDecision" parent="Modules/Animator" index="0" instance=ExtResource( 10 )]
+MovementPath = NodePath("../../../Core/Movement")
+
+[node name="IdleAnimationDecision" parent="Modules/Animator" index="1" instance=ExtResource( 7 )]

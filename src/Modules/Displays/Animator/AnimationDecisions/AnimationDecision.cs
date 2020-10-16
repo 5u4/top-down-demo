@@ -1,6 +1,6 @@
 using Godot;
 
-namespace TopDownDemo.Cores.Animation.AnimationDecisions
+namespace TopDownDemo.Modules.Displays.Animator.AnimationDecisions
 {
     public abstract class AnimationDecision : Node2D
     {
