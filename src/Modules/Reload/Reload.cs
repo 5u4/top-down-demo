@@ -1,23 +1,22 @@
 using Godot;
 using TopDownDemo.Cores.ActionLock;
-using TopDownDemo.Mechanics.Magazine;
 
 namespace TopDownDemo.Modules.Reload
 {
-    public class Reload : Node2D
+    public class Reload : Module
     {
         [Export] public string ReloadAnimation = "Reload";
         [Export] public string FallbackAnimation = "Reset";
         [Export] public NodePath MagazinePath;
         [Export] public NodePath AnimationPlayerPath;
 
-        public Magazine Magazine;
+        public Magazine.Magazine Magazine;
         public AnimationPlayer AnimationPlayer;
         public ActionLock ActionLock;
 
         public override void _Ready()
         {
-            Magazine = GetNode<Magazine>(MagazinePath);
+            Magazine = GetNode<Magazine.Magazine>(MagazinePath);
             AnimationPlayer = GetNode<AnimationPlayer>(AnimationPlayerPath);
             ActionLock = GetNode<ActionLock>("ActionLock");
 
@@ -50,7 +49,7 @@ namespace TopDownDemo.Modules.Reload
 
         public void LoadOne()
         {
-            Magazine.Gain();
+            Magazine.Decrease();
         }
 
         private void OnAnimationFinished(string anim)

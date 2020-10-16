@@ -1,6 +1,6 @@
 using Godot;
 using TopDownDemo.Mechanics.Attacks;
-using TopDownDemo.Mechanics.Magazine;
+using TopDownDemo.Modules.Magazine;
 using TopDownDemo.Modules.Reload;
 
 namespace TopDownDemo.Weapons.Ranged.Pistol
@@ -25,7 +25,7 @@ namespace TopDownDemo.Weapons.Ranged.Pistol
         public override void Execute()
         {
             if (Magazine.Amount <= 0 || Reload.ActionLock.IsLocked) return; // TODO: Handle empty magazine sfx
-            Magazine.Reduce();
+            Magazine.Increase();
             AnimationPlayer.Play("WeaponPrimary");
         }
     }

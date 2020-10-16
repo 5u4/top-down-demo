@@ -75,7 +75,7 @@
     <Compile Include="Modules\AutoReload\AutoReload.cs" />
     <Compile Include="Modules\LookAtCursor\LookAtCursor.cs" />
     <Compile Include="Mechanics\Attacks\IndividualCoolDownAttack\IndividualCoolDownAttack.cs" />
-    <Compile Include="Mechanics\Magazine\Magazine.cs" />
+    <Compile Include="Modules\Magazine\Magazine.cs" />
     <Compile Include="Mechanics\Mechanic.cs" />
     <Compile Include="Modules\Reload\Reload.cs" />
     <Compile Include="Modules\Module.cs" />

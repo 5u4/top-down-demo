@@ -1,6 +1,5 @@
 using System.Linq;
 using Godot;
-using TopDownDemo.Mechanics.Magazine;
 
 namespace TopDownDemo.Modules.AutoReload
 {
@@ -12,13 +11,13 @@ namespace TopDownDemo.Modules.AutoReload
         [Export] public NodePath AnimationPlayerPath;
 
         public Reload.Reload Reload;
-        public Magazine Magazine;
+        public Magazine.Magazine Magazine;
         public AnimationPlayer AnimationPlayer;
 
         public override void _Ready()
         {
             Reload = GetNode<Reload.Reload>(ReloadPath);
-            Magazine = GetNode<Magazine>(MagazinePath);
+            Magazine = GetNode<Magazine.Magazine>(MagazinePath);
             AnimationPlayer = GetNode<AnimationPlayer>(AnimationPlayerPath);
         }
 
