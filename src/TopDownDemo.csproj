@@ -76,7 +76,6 @@
     <Compile Include="Modules\LookAtCursor\LookAtCursor.cs" />
     <Compile Include="Attacks\CoolDownAttack\CoolDownAttack.cs" />
     <Compile Include="Modules\Magazine\Magazine.cs" />
-    <Compile Include="Mechanics\Mechanic.cs" />
     <Compile Include="Modules\Reload\Reload.cs" />
     <Compile Include="Modules\Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
