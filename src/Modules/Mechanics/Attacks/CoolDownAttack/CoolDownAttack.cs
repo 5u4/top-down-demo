@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Cores.ActionLock;
 
-namespace TopDownDemo.Attacks.CoolDownAttack
+namespace TopDownDemo.Modules.Mechanics.Attacks.CoolDownAttack
 {
     public class CoolDownAttack : Node2D
     {

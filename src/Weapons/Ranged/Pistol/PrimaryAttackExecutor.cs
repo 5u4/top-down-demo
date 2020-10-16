@@ -1,5 +1,5 @@
 using Godot;
-using TopDownDemo.Attacks;
+using TopDownDemo.Modules.Mechanics.Attacks;
 using TopDownDemo.Modules.Mechanics.Magazine;
 using TopDownDemo.Modules.Mechanics.Reload;
 
