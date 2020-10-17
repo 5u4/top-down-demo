@@ -5,7 +5,7 @@ using TopDownDemo.Modules.Mechanics.Reload;
 
 namespace TopDownDemo.Weapons.Ranged.Pistol
 {
-    public class PrimaryAttackExecutor : Executor
+    public class PrimaryAttack : Executor
     {
         [Export] public NodePath ReloadPath;
         [Export] public NodePath MagazinePath;

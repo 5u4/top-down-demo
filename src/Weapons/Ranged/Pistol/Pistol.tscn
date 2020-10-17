@@ -6,7 +6,7 @@
 [ext_resource path="res://Modules/Displays/LookAtCursor/LookAtCursor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Modules/Mechanics/Attacks/CoolDownAttack/CoolDownAttack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Weapons/Ranged/Pistol/WeaponPrimary.tres" type="Animation" id=6]
-[ext_resource path="res://Weapons/Ranged/Pistol/PrimaryAttackExecutor.cs" type="Script" id=7]
+[ext_resource path="res://Weapons/Ranged/Pistol/PrimaryAttack.cs" type="Script" id=7]
 [ext_resource path="res://Weapons/Projectiles/PinkBullet/PinkBullet.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Cores/Spawner/Modifiers/CursorDirection/CursorDirection.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Cores/Spawner/Modifiers/Spread/Spread.tscn" type="PackedScene" id=10]
@@ -130,28 +130,26 @@ MagazinePath = NodePath("../Magazine")
 AnimationPlayerPath = NodePath("../../AnimationPlayer")
 
 [node name="PrimaryAttack" type="Node2D" parent="Modules" index="5"]
+script = ExtResource( 7 )
+ReloadPath = NodePath("../Reload")
+MagazinePath = NodePath("../Magazine")
+AnimationPlayerPath = NodePath("../../AnimationPlayer")
 
 [node name="CoolDownAttack" parent="Modules/PrimaryAttack" index="0" instance=ExtResource( 5 )]
-ExecutorPath = NodePath("PrimaryAttackExecutor")
+ExecutorPath = NodePath("..")
 ActionLockPath = NodePath("ActionLock")
 CoolDown = 0.4
 Trigger = "weapon_primary"
 
 [node name="ActionLock" parent="Modules/PrimaryAttack/CoolDownAttack" index="0" instance=ExtResource( 15 )]
 
-[node name="PrimaryAttackExecutor" type="Node2D" parent="Modules/PrimaryAttack/CoolDownAttack" index="1"]
-script = ExtResource( 7 )
-ReloadPath = NodePath("../../../Reload")
-MagazinePath = NodePath("../../../Magazine")
-AnimationPlayerPath = NodePath("../../../../AnimationPlayer")
-
-[node name="Spawner" parent="Modules/PrimaryAttack/CoolDownAttack/PrimaryAttackExecutor" index="0" instance=ExtResource( 3 )]
+[node name="Spawner" parent="Modules/PrimaryAttack/CoolDownAttack" index="1" instance=ExtResource( 3 )]
 ProjectileScene = ExtResource( 8 )
 SpawnPositionPath = NodePath("../../../../../GlobalHandle/LocalHandle/Muzzle")
 
-[node name="CursorDirection" parent="Modules/PrimaryAttack/CoolDownAttack/PrimaryAttackExecutor/Spawner" index="0" instance=ExtResource( 9 )]
+[node name="CursorDirection" parent="Modules/PrimaryAttack/CoolDownAttack/Spawner" index="0" instance=ExtResource( 9 )]
 CenterPositionPath = NodePath("../../../../../..")
 
-[node name="Spread" parent="Modules/PrimaryAttack/CoolDownAttack/PrimaryAttackExecutor/Spawner" index="1" instance=ExtResource( 10 )]
+[node name="Spread" parent="Modules/PrimaryAttack/CoolDownAttack/Spawner" index="1" instance=ExtResource( 10 )]
 Lower = -5.0
 Upper = 5.0
