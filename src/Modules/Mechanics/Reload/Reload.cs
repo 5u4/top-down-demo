@@ -49,7 +49,7 @@ namespace TopDownDemo.Modules.Mechanics.Reload
 
         public void LoadOne()
         {
-            Magazine.Decrease();
+            Magazine.Increase();
         }
 
         private void OnAnimationFinished(string anim)
