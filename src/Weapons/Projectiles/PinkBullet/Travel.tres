@@ -4,7 +4,7 @@
 resource_name = "Travel"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("ParticleTrailing:emitting")
+tracks/0/path = NodePath("Particles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
