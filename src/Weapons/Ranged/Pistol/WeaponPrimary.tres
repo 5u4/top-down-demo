@@ -53,7 +53,7 @@ tracks/3/keys = {
 "values": [ Vector2( 11, 0 ) ]
 }
 tracks/4/type = "method"
-tracks/4/path = NodePath("Modules/PrimaryAttack/CoolDownAttack/PrimaryAttackExecutor/Spawner")
+tracks/4/path = NodePath("Modules/PrimaryAttack/CoolDownAttack/Spawner")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
