@@ -52,6 +52,11 @@ namespace TopDownDemo.Modules.Mechanics.Reload
             Magazine.Increase();
         }
 
+        public void LoadAll()
+        {
+            Magazine.LoadAll();
+        }
+
         private void OnAnimationFinished(string anim)
         {
             if (anim != ReloadAnimation) return;
