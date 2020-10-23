@@ -87,7 +87,6 @@
     <Compile Include="Cores\Spawner\Modifiers\Modifier.cs" />
     <Compile Include="Cores\Spawner\Modifiers\Spread\Spread.cs" />
     <Compile Include="Cores\Spawner\Spawner.cs" />
-    <Compile Include="Weapons\Ranged\Pistol\SecondaryAttack.cs" />
     <Compile Include="Weapons\Ranged\Ranged.cs" />
     <Compile Include="Weapons\Weapon.cs" />
   </ItemGroup>
