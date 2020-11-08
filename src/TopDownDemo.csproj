@@ -57,38 +57,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\Displays\Flippers\Flipper.cs" />
-    <Compile Include="Modules\Displays\Flippers\TwoSideCursorAnimatedSpriteFlipper\TwoSideCursorAnimatedSpriteFlipper.cs" />
-    <Compile Include="Modules\Displays\Flippers\TwoSideCursorScaleFlipper\TwoSideCursorScaleFlipper.cs" />
-    <Compile Include="Modules\Mechanics\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
-    <Compile Include="Modules\Displays\Animator\Animator.cs" />
-    <Compile Include="Modules\Displays\Animator\AnimationDecisions\AnimationDecision.cs" />
-    <Compile Include="Modules\Displays\Animator\AnimationDecisions\IdleAnimationDecision.cs" />
-    <Compile Include="Modules\Displays\Animator\AnimationDecisions\RunAnimationDecision.cs" />
-    <Compile Include="Cores\ActionLock\ActionLock.cs" />
-    <Compile Include="Modules\Mechanics\Movements\Movement\Movement.cs" />
-    <Compile Include="Creatures\Body.cs" />
     <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Enemies\Enemy.cs" />
+    <Compile Include="Creatures\Players\Alice\Alice.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
-    <Compile Include="Creatures\Players\Soldier\Soldier.cs" />
-    <Compile Include="Modules\Mechanics\Attacks\Executor.cs" />
-    <Compile Include="Modules\Mechanics\AutoReload\AutoReload.cs" />
-    <Compile Include="Modules\Displays\LookAtCursor\LookAtCursor.cs" />
-    <Compile Include="Modules\Mechanics\Attacks\CoolDownAttack\CoolDownAttack.cs" />
-    <Compile Include="Modules\Mechanics\Magazine\Magazine.cs" />
-    <Compile Include="Modules\Mechanics\Reload\Reload.cs" />
     <Compile Include="Modules\Module.cs" />
+    <Compile Include="Modules\Creatures\Movements\Movement.cs" />
+    <Compile Include="Modules\Creatures\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Weapons\Ranged\Pistol\PrimaryAttack.cs" />
-    <Compile Include="Weapons\Projectiles\Modifiers\LinearTraveller\LinearTraveller.cs" />
-    <Compile Include="Weapons\Projectiles\PinkBullet\PinkBullet.cs" />
-    <Compile Include="Weapons\Projectiles\Projectile.cs" />
-    <Compile Include="Cores\Spawner\Modifiers\CursorDirection\CursorDirection.cs" />
-    <Compile Include="Cores\Spawner\Modifiers\Modifier.cs" />
-    <Compile Include="Cores\Spawner\Modifiers\Spread\Spread.cs" />
-    <Compile Include="Cores\Spawner\Spawner.cs" />
-    <Compile Include="Weapons\Ranged\Ranged.cs" />
-    <Compile Include="Weapons\Weapon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
