@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Creatures/Players/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Modules/Creatures/Movements/PlayerControlledMovement/PlayerControlledMovement.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/Creatures/Movements/Movement.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Weapons/Drone/Drone.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CSharpScript" id=1]
 resource_name = "Alice"
@@ -46,3 +47,5 @@ texture = ExtResource( 2 )
 [node name="Movement" parent="Modules" index="0" instance=ExtResource( 4 )]
 
 [node name="PlayerControlledMovement" parent="Modules" index="1" instance=ExtResource( 3 )]
+
+[node name="Drone" parent="Weapon" index="0" instance=ExtResource( 5 )]
