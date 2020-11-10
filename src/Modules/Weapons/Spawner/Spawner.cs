@@ -8,17 +8,20 @@ namespace TopDownDemo.Modules.Weapons.Spawner
 {
     public class Spawner : Node2D
     {
+        [Export] public NodePath WeaponDisplayPath = "../Display";
         [Export] public NodePath WeaponModifiersPath = "Modifiers";
         [Export] public NodePath CreatureModifiersPath = "../../../Modifiers";
         [Export] public NodePath MuzzlePath = "../Display/GlobalHandle/LocalHandle/Muzzle";
         [Export] public PackedScene ProjectileScene;
 
+        public Node2D WeaponDisplay;
         public Node2D WeaponModifiers;
         public Node2D CreatureModifiers;
         public Position2D Muzzle;
 
         public override void _Ready()
         {
+            WeaponDisplay = GetNode<Node2D>(WeaponDisplayPath);
             WeaponModifiers = GetNode<Node2D>(WeaponModifiersPath);
             CreatureModifiers = GetNode<Node2D>(CreatureModifiersPath);
             Muzzle = GetNode<Position2D>(MuzzlePath);
@@ -42,7 +45,9 @@ namespace TopDownDemo.Modules.Weapons.Spawner
 
         public Projectile CreateOriginal()
         {
-            return (Projectile)ProjectileScene.Instance();
+            var projectile = (Projectile)ProjectileScene.Instance();
+            projectile.SourceWeaponDisplay = WeaponDisplay;
+            return projectile;
         }
 
         public Projectile CreateModified()

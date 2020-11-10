@@ -63,6 +63,8 @@
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Modifiers\Attachment.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
+    <Compile Include="Modifiers\MouseAimModifier\MouseAimModifier.cs" />
+    <Compile Include="Modifiers\SpreadModifier\SpreadModifier.cs" />
     <Compile Include="Modifiers\TrackGroupModifier\TrackGroupAttachment.cs" />
     <Compile Include="Modifiers\TrackGroupModifier\TrackGroupModifier.cs" />
     <Compile Include="Modules\Module.cs" />
