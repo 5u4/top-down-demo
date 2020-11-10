@@ -61,7 +61,10 @@
     <Compile Include="Creatures\Enemies\Enemy.cs" />
     <Compile Include="Creatures\Players\Alice\Alice.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
+    <Compile Include="Modifiers\Attachment.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
+    <Compile Include="Modifiers\TrackGroupModifier\TrackGroupAttachment.cs" />
+    <Compile Include="Modifiers\TrackGroupModifier\TrackGroupModifier.cs" />
     <Compile Include="Modules\Module.cs" />
     <Compile Include="Modules\Creatures\Movements\Movement.cs" />
     <Compile Include="Modules\Creatures\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />

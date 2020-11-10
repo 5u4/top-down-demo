@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Weapons/Weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Weapons/Drone/Drone.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Modules/Triggers/Executors/SpawnExecutor/SpawnExecutor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Weapons/Projectiles/FastTrackingBullet/FastTrackingBullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Modules/Triggers/Conditions/CoolDownCondition/CoolDownCondition.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modifiers/TrackGroupModifier/TrackGroupModifier.tscn" type="PackedScene" id=9]
 
 [node name="Drone" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -31,3 +32,5 @@ Interval = 0.1
 
 [node name="Spawner" parent="." index="4"]
 ProjectileScene = ExtResource( 7 )
+
+[node name="TrackGroupModifier" parent="Spawner/Modifiers" index="0" instance=ExtResource( 9 )]

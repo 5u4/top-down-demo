@@ -6,8 +6,7 @@
 
 [node name="FastTrackingBullet" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-Damage = 1
-Speed = 10.0
+Speed = 500.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 scale = Vector2( 0.2, 0.2 )
