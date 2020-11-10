@@ -64,6 +64,9 @@
     <Compile Include="Modules\Module.cs" />
     <Compile Include="Modules\Creatures\Movements\Movement.cs" />
     <Compile Include="Modules\Creatures\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
+    <Compile Include="Modules\Triggers\Conditions\Condition.cs" />
+    <Compile Include="Modules\Triggers\Executors\Executor.cs" />
+    <Compile Include="Modules\Triggers\Trigger.cs" />
     <Compile Include="Modules\Weapons\LerpFollower\LerpFollower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weapons\Drone\Drone.cs" />
