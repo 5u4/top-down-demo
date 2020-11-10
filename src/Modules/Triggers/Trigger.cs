@@ -8,7 +8,6 @@ namespace TopDownDemo.Modules.Triggers
 {
     public class Trigger : Node2D
     {
-        [Export] public Condition[] Conditions = {};
         [Export] public string HotKey;
 
         /**
@@ -16,18 +15,26 @@ namespace TopDownDemo.Modules.Triggers
          */
         public bool CanTrigger()
         {
-            return Conditions.All(condition => condition.Ok());
+            return GetConditions().All(condition => condition.Ok());
         }
 
         public override void _Process(float delta)
         {
             if (!Input.IsActionPressed(HotKey) || !CanTrigger()) return;
+            foreach (var condition in GetConditions()) condition.Trigger();
             foreach (var executor in GetExecutors()) executor.Execute();
         }
 
         public IEnumerable<Executor> GetExecutors()
         {
-            return GetChildren().Cast<Executor>();
+            return GetChildren().Cast<Node2D>()
+                .Where(executor => executor is Executor).Cast<Executor>();
+        }
+
+        public IEnumerable<Condition> GetConditions()
+        {
+            return GetChildren().Cast<Node2D>()
+                .Where(condition => condition is Condition).Cast<Condition>();
         }
     }
 }
