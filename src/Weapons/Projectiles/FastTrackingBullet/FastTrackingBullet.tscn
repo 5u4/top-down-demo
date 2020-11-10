@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Weapons/Projectiles/FastTrackingBullet/FastTrackingBullet.cs" type="Script" id=1]
+[ext_resource path="res://Weapons/Projectiles/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[node name="FastTrackingBullet" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+Damage = 1
+Speed = 10.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )

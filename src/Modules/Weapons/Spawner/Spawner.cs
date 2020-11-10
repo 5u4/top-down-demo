@@ -10,15 +10,18 @@ namespace TopDownDemo.Modules.Weapons.Spawner
     {
         [Export] public NodePath WeaponModifiersPath = "Modifiers";
         [Export] public NodePath CreatureModifiersPath = "../../../Modifiers";
+        [Export] public NodePath MuzzlePath = "../Display/GlobalHandle/LocalHandle/Muzzle";
         [Export] public PackedScene ProjectileScene;
 
         public Node2D WeaponModifiers;
         public Node2D CreatureModifiers;
+        public Position2D Muzzle;
 
         public override void _Ready()
         {
             WeaponModifiers = GetNode<Node2D>(WeaponModifiersPath);
             CreatureModifiers = GetNode<Node2D>(CreatureModifiersPath);
+            Muzzle = GetNode<Position2D>(MuzzlePath);
         }
 
         public void Spawn()
@@ -33,6 +36,7 @@ namespace TopDownDemo.Modules.Weapons.Spawner
 
         public void PlaceProjectile(Projectile projectile)
         {
+            projectile.GlobalPosition = Muzzle.GlobalPosition;
             GetTree().Root.AddChild(projectile);
         }
 

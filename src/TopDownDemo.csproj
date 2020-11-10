@@ -67,8 +67,10 @@
     <Compile Include="Modules\Creatures\Movements\PlayerControlledMovement\PlayerControlledMovement.cs" />
     <Compile Include="Modules\Triggers\Conditions\Condition.cs" />
     <Compile Include="Modules\Triggers\Executors\Executor.cs" />
+    <Compile Include="Modules\Triggers\Executors\SpawnExecutor\SpawnExecutor.cs" />
     <Compile Include="Modules\Triggers\Trigger.cs" />
     <Compile Include="Modules\Weapons\LerpFollower\LerpFollower.cs" />
+    <Compile Include="Weapons\Projectiles\FastTrackingBullet\FastTrackingBullet.cs" />
     <Compile Include="Weapons\Projectiles\Projectile.cs" />
     <Compile Include="Modules\Weapons\Spawner\Spawner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
