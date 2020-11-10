@@ -22,12 +22,17 @@ namespace TopDownDemo.Weapons.Projectiles
             GlobalPosition += Direction.Normalized() * Speed * delta;
         }
 
+        public void Destroy()
+        {
+            QueueFree();
+        }
+
         private void OnBodyEntered(Node body)
         {
             if (!(body is KinematicBody2D kinematicBody) || !(kinematicBody.GetParent() is Creature creature)) return;
             if (creature.Faction != Faction.None && creature.Faction == Faction) return;
             creature.OnDamaged(Damage);
-            QueueFree();
+            Destroy();
         }
     }
 }

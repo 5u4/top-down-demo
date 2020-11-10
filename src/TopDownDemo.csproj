@@ -65,6 +65,8 @@
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Modifiers\AttachedModifiers\AttachedModifier.cs" />
     <Compile Include="Modifiers\AttachedModifiers\Attachment.cs" />
+    <Compile Include="Modifiers\AttachedModifiers\SelfDestroyModifier\SelfDestroyAttachment.cs" />
+    <Compile Include="Modifiers\AttachedModifiers\SelfDestroyModifier\SelfDestroyModifier.cs" />
     <Compile Include="Modifiers\AttachedModifiers\TrackTargetModifier\TrackTargetAttachment.cs" />
     <Compile Include="Modifiers\AttachedModifiers\TrackTargetModifier\TrackTargetModifier.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
