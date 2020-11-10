@@ -7,9 +7,9 @@ namespace TopDownDemo.Modules.Triggers
 {
     public class Trigger : Node2D
     {
-        [Export] public Condition[] Conditions;
+        [Export] public Condition[] Conditions = {};
+        [Export] public Executor[] Executors = {};
         [Export] public string HotKey;
-        [Export] public Executor[] Executors;
 
         /**
          * Passes all conditions
