@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Enemies\Dummy\Dummy.cs" />
     <Compile Include="Creatures\Enemies\Enemy.cs" />
+    <Compile Include="Creatures\Faction.cs" />
     <Compile Include="Creatures\Players\Alice\Alice.cs" />
     <Compile Include="Creatures\Players\Player.cs" />
     <Compile Include="Modifiers\Attachment.cs" />

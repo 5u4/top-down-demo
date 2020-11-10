@@ -36,6 +36,7 @@ extents = Vector2( 56, 56 )
 
 [node name="Alice" instance=ExtResource( 1 )]
 script = SubResource( 1 )
+Faction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
 shape = SubResource( 2 )
