@@ -6,12 +6,14 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
     {
         [Export] public float Sight = 1000;
         [Export] public float SteeringScale = 0.008f;
+        [Export] public float SteeringAcceleration = 0.5f;
 
         public override Attachment ModifyAttachment(Attachment attachment)
         {
             var trackTargetAttachment = (TrackTargetAttachment) attachment;
             trackTargetAttachment.Sight = Sight;
             trackTargetAttachment.SteeringScale = SteeringScale;
+            trackTargetAttachment.SteeringAcceleration = SteeringAcceleration;
             return trackTargetAttachment;
         }
     }

@@ -39,7 +39,7 @@ ProjectileScene = ExtResource( 7 )
 [node name="MouseAimModifier" parent="Spawner/Modifiers" index="0" instance=ExtResource( 11 )]
 
 [node name="SpreadModifier" parent="Spawner/Modifiers" index="1" instance=ExtResource( 10 )]
-Amount = 10.0
+Amount = 180.0
 
 [node name="TrackTargetModifier" parent="Spawner/Modifiers" index="2" instance=ExtResource( 9 )]
 

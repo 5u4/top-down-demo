@@ -7,6 +7,7 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
     {
         [Export] public float Sight = 1;
         [Export] public float SteeringScale = 0.001f;
+        [Export] public float SteeringAcceleration;
 
         public Area2D Area;
         public CollisionShape2D Collision;
@@ -44,6 +45,7 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
         {
             var desiredVector = Projectile.GlobalPosition.DirectionTo(Target.GlobalPosition) * Projectile.Speed;
             var steeringVector = (desiredVector - Projectile.Direction) * SteeringScale;
+            SteeringScale += SteeringScale * SteeringAcceleration * delta;
             Projectile.Direction += steeringVector * delta;
         }
     }
