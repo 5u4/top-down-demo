@@ -8,10 +8,13 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
         [Export] public float Sight = 1;
         [Export] public float SteeringScale = 0.001f;
         [Export] public float SteeringAcceleration;
+        [Export] public float TargetFindingInterval = 0.1f;
 
         public Area2D Area;
         public CollisionShape2D Collision;
+        public Timer Timer;
         public Creature Target;
+        public bool ReadyForTargetFinding = true;
 
         public override void _Ready()
         {
@@ -19,8 +22,10 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
 
             Area = GetNode<Area2D>("Area2D");
             Collision = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
+            Timer = GetNode<Timer>("Timer");
 
             Collision.Shape = new CircleShape2D {Radius = Sight};
+            Timer.Connect("timeout", this, nameof(OnTimeout));
         }
 
 
@@ -32,6 +37,10 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
 
         private void FindTarget()
         {
+            if (!ReadyForTargetFinding) return;
+            Timer.Start(TargetFindingInterval);
+            ReadyForTargetFinding = false;
+
             foreach (var node in Area.GetOverlappingBodies())
             {
                 if (!(node is KinematicBody2D body) || !(body.GetParent() is Creature creature)) continue;
@@ -47,6 +56,11 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
             var steeringVector = (desiredVector - Projectile.Direction) * SteeringScale;
             SteeringScale += SteeringScale * SteeringAcceleration * delta;
             Projectile.Direction += steeringVector * delta;
+        }
+
+        private void OnTimeout()
+        {
+            ReadyForTargetFinding = true;
         }
     }
 }
