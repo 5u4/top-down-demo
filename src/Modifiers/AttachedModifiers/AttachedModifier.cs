@@ -1,9 +1,9 @@
 using Godot;
 using TopDownDemo.Weapons.Projectiles;
 
-namespace TopDownDemo.Modifiers.TrackGroupModifier
+namespace TopDownDemo.Modifiers.AttachedModifiers
 {
-    public class TrackGroupModifier : Modifier
+    public class AttachedModifier : Modifier
     {
         [Export] public PackedScene AttachmentScene;
 

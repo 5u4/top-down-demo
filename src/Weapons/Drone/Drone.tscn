@@ -8,7 +8,7 @@
 [ext_resource path="res://Modules/Triggers/Executors/SpawnExecutor/SpawnExecutor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Weapons/Projectiles/FastTrackingBullet/FastTrackingBullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Modules/Triggers/Conditions/CoolDownCondition/CoolDownCondition.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Modifiers/TrackGroupModifier/TrackGroupModifier.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modifiers/AttachedModifiers/TrackTargetModifier/TrackTargetModifier.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Modifiers/SpreadModifier/SpreadModifier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Modifiers/MouseAimModifier/MouseAimModifier.tscn" type="PackedScene" id=11]
 
@@ -37,7 +37,7 @@ ProjectileScene = ExtResource( 7 )
 
 [node name="MouseAimModifier" parent="Spawner/Modifiers" index="0" instance=ExtResource( 11 )]
 
-[node name="TrackGroupModifier" parent="Spawner/Modifiers" index="1" instance=ExtResource( 9 )]
-
-[node name="SpreadModifier" parent="Spawner/Modifiers" index="2" instance=ExtResource( 10 )]
+[node name="SpreadModifier" parent="Spawner/Modifiers" index="1" instance=ExtResource( 10 )]
 Amount = 10.0
+
+[node name="TrackTargetModifier" parent="Spawner/Modifiers" index="2" instance=ExtResource( 9 )]

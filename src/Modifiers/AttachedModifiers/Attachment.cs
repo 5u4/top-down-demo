@@ -1,7 +1,7 @@
 using Godot;
 using TopDownDemo.Weapons.Projectiles;
 
-namespace TopDownDemo.Modifiers
+namespace TopDownDemo.Modifiers.AttachedModifiers
 {
     public abstract class Attachment : Node2D
     {

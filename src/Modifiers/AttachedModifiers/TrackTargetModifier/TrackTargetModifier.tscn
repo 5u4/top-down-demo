@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Modifiers/AttachedModifiers/AttachedModifier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Modifiers/AttachedModifiers/TrackTargetModifier/TrackTargetModifier.cs" type="Script" id=2]
+[ext_resource path="res://Modifiers/AttachedModifiers/TrackTargetModifier/TrackTargetAttachment.tscn" type="PackedScene" id=3]
+
+[node name="TrackTargetModifier" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+AttachmentScene = ExtResource( 3 )
