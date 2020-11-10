@@ -5,7 +5,8 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
 {
     public class TrackTargetAttachment : Attachment
     {
-        [Export] public float Sight = 400;
+        [Export] public float Sight = 1;
+        [Export] public float SteeringScale = 0.001f;
 
         public Area2D Area;
         public CollisionShape2D Collision;
@@ -25,7 +26,7 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
         public override void _PhysicsProcess(float delta)
         {
             if (Target == null) FindTarget();
-            else TrackTarget();
+            else TrackTarget(delta);
         }
 
         private void FindTarget()
@@ -39,9 +40,11 @@ namespace TopDownDemo.Modifiers.AttachedModifiers.TrackTargetModifier
             }
         }
 
-        private void TrackTarget()
+        private void TrackTarget(float delta)
         {
-            Projectile.Direction = Projectile.GlobalPosition.DirectionTo(Target.GlobalPosition);
+            var desiredVector = Projectile.GlobalPosition.DirectionTo(Target.GlobalPosition) * Projectile.Speed;
+            var steeringVector = (desiredVector - Projectile.Direction) * SteeringScale;
+            Projectile.Direction += steeringVector * delta;
         }
     }
 }

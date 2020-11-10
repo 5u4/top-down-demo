@@ -9,8 +9,13 @@ namespace TopDownDemo.Modifiers.AttachedModifiers
 
         public override Projectile Modify(Projectile projectile)
         {
-            projectile.AddChild(AttachmentScene.Instance());
+            projectile.AddChild(ModifyAttachment((Attachment) AttachmentScene.Instance()));
             return projectile;
+        }
+
+        public virtual Attachment ModifyAttachment(Attachment attachment)
+        {
+            return attachment;
         }
     }
 }
